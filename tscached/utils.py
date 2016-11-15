@@ -56,7 +56,7 @@ def query_kairos(kairos_host, kairos_port, query, propagate=True):
         :raise: BackendQueryFailure if the operation doesn't succeed.
     """
     try:
-        url = 'http://%s:%s/api/v1/datapoints/query' % (kairos_host, kairos_port)
+        url = 'https://%s:%s/api/v1/datapoints/query' % (kairos_host, kairos_port)
         r = requests.post(url, data=json.dumps(query))
         value = json.loads(r.text)
         if r.status_code / 100 != 2:

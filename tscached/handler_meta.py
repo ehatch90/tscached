@@ -41,7 +41,7 @@ def metadata_caching(config, name, endpoint, post_data=None):
         return get_result, 200
     else:
         logging.info('Meta Endpoint MISS: %s' % redis_key)
-        url = 'http://%s:%s%s' % (config['kairosdb']['host'], config['kairosdb']['port'], endpoint)
+        url = 'https://%s:%s%s' % (config['kairosdb']['host'], config['kairosdb']['port'], endpoint)
 
         try:
             if post_data:
